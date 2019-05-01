@@ -1,0 +1,24 @@
+[
+    {
+        "caption": "VBoardS",
+        "id": "VBoardS",
+        "children": [
+            {
+                "caption": "Share",
+                "id": "vboardsShare",
+                "command": "vboards_share",
+            },
+            {
+                "caption": "Receive",
+                "id": "vboardsReceive",
+                "command": "vboards_receive",
+            },
+            {"caption":"-", "id":"side-bar-separator"},
+            {
+                "caption": "Set server address",
+                "id": "vboardsSetServerAddress",
+                "command": "vboards_set_server_address",
+            },
+        ]
+    }
+]

@@ -1,0 +1,29 @@
+[
+    {
+        "caption": "VBoardT",
+        "id": "VBoardT",
+        "children": [
+            {
+                "caption": "Share",
+                "id": "vboardtShare",
+                "command": "vboardt_share",
+            },
+            {
+                "caption": "Receive",
+                "id": "vboardtReceive",
+                "command": "vboardt_receive",
+            },
+            {
+                "caption": "Clear",
+                "id": "vboardtClearBroadcast",
+                "command": "vboardt_clear_broadcast",
+            },
+            {"caption":"-", "id":"side-bar-separator"},
+            {
+                "caption": "Set server address",
+                "id": "vboardtSetServerAddress",
+                "command": "vboardt_set_server_address",
+            },
+        ]
+    }
+]
