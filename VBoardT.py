@@ -70,10 +70,8 @@ class vboardtShare(sublime_plugin.TextCommand):
 			sublime.message_dialog(response)
 
 # ------------------------------------------------------------------
-class vboardtReceive(sublime_plugin.TextCommand):
-	def run(self, edit):
-		beg, end = self.view.sel()[0].begin(), self.view.sel()[0].end()
-		content = self.view.substr(sublime.Region(beg,end))
+class vboardtReceive(sublime_plugin.ApplicationCommand):
+	def run(self):
 		response = vboardt_Request('teacher_receives', {})
 		if response is not None:
 			sub = json.loads(response)

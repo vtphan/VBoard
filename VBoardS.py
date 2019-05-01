@@ -63,17 +63,15 @@ class vboardsShare(sublime_plugin.TextCommand):
 			sublime.message_dialog(response)
 
 # ------------------------------------------------------------------
-class vboardsReceive(sublime_plugin.TextCommand):
-	def run(self, edit):
-		beg, end = self.view.sel()[0].begin(), self.view.sel()[0].end()
-		content = self.view.substr(sublime.Region(beg,end))
+class vboardsReceive(sublime_plugin.ApplicationCommand):
+	def run(self):
 		response = vboards_Request('student_receives', {})
 		if response is not None:
 			sub = json.loads(response)
 			if sub['Content'] == '':
 				sublime.message_dialog('There is no message.')
 			else:
-				local_file = os.path.join(vboards_BROADCAST_FOLDER, 'broadcast.')
+				local_file = os.path.join(vboards_BROADCAST_FOLDER, 'virtual_board.')
 				local_file += sub['Ext']
 				with open(local_file, 'w', encoding='utf-8') as fp:
 					fp.write(sub['Content'])
