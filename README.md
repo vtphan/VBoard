@@ -10,7 +10,7 @@ To install Sublime Text 3, [go here.](https://www.sublimetext.com/3)
 
 (3) Copy this code:
 ```
-import os; package_path = os.path.join(sublime.packages_path(), "VBoardS"); os.mkdir(package_path) if not os.path.isdir(package_path) else print("dir exists"); module_file = os.path.join(package_path, "VBoardS.py") ; menu_file = os.path.join(package_path, "Main.sublime-menu"); version_file = os.path.join(package_path, "version.go"); import urllib.request; urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/src/VBoardS.py", module_file); urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/src/Main.sublime-menu-Student", menu_file); urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/src/version.go", version_file)
+import os; package_path = os.path.join(sublime.packages_path(), "VBoardS"); os.mkdir(package_path) if not os.path.isdir(package_path) else print("dir exists"); module_file = os.path.join(package_path, "VBoardS.py") ; menu_file = os.path.join(package_path, "Main.sublime-menu"); version_file = os.path.join(package_path, "version.go"); import urllib.request; urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/VBoardS.py", module_file); urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/Main.sublime-menu-Student", menu_file); urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/version.go", version_file)
 ```
 
 (4) Paste copied code to Console and hit enter.
@@ -26,7 +26,7 @@ import os; package_path = os.path.join(sublime.packages_path(), "VBoardS"); os.m
 
 (3) Copy this code:
 ```
-import os; package_path = os.path.join(sublime.packages_path(), "VBoardT"); os.mkdir(package_path) if not os.path.isdir(package_path) else print("dir exists"); module_file = os.path.join(package_path, "VBoardT.py") ; menu_file = os.path.join(package_path, "Main.sublime-menu"); version_file = os.path.join(package_path, "version.go"); import urllib.request; urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/src/VBoardT.py", module_file); urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/src/Main.sublime-menu-Teacher", menu_file); urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/src/version.go", version_file)
+import os; package_path = os.path.join(sublime.packages_path(), "VBoardT"); os.mkdir(package_path) if not os.path.isdir(package_path) else print("dir exists"); module_file = os.path.join(package_path, "VBoardT.py") ; menu_file = os.path.join(package_path, "Main.sublime-menu"); version_file = os.path.join(package_path, "version.go"); import urllib.request; urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/VBoardT.py", module_file); urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/Main.sublime-menu-Teacher", menu_file); urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/version.go", version_file)
 ```
 (4) Paste copied code to Console and hit enter.
 
