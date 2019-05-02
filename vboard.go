@@ -1,5 +1,5 @@
 //
-// Author: Vinhthuy Phan (2018)
+// Author: Vinhthuy Phan (2018-2019)
 //
 
 package main
@@ -8,6 +8,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"net"
 	"net/http"
 	"os"
 	"sync"
@@ -42,6 +43,8 @@ Usage:
 	go_program  config.json
 
 config.json is a json-formated file with 2 fields, IP and Port.
+
+If there is no IP field, vboard attempts to get the server ip address.
 
 Example of config.json:
 {
@@ -137,6 +140,20 @@ func student_sharesHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 //-----------------------------------------------------------------
+func informIPAddress() string {
+	addrs, err := net.InterfaceAddrs()
+	if err != nil {
+		log.Fatal(err)
+	}
+	for _, a := range addrs {
+		if ipnet, ok := a.(*net.IPNet); ok && ipnet.IP.IsGlobalUnicast() {
+			return ipnet.IP.String()
+		}
+	}
+	return ""
+}
+
+//-----------------------------------------------------------------
 func init_config(filename string) {
 	file, err := os.Open(filename)
 	if err != nil {
@@ -147,6 +164,12 @@ func init_config(filename string) {
 	err = decoder.Decode(&Config)
 	if err != nil {
 		log.Fatal(err)
+	}
+	if Config.IP == "" {
+		Config.IP = informIPAddress()
+		if Config.IP == "" {
+			panic("Unable to guess IP address. Please specify IP in config file.")
+		}
 	}
 	Config.Address = fmt.Sprintf("%s:%d", Config.IP, Config.Port)
 }
@@ -165,7 +188,8 @@ func main() {
 	}
 	init_config(os.Args[1])
 	fmt.Println("**************************************************")
-	fmt.Println("* VBoard running on", Config.Address)
+	fmt.Printf("* VBoard (%s)\n", VERSION)
+	fmt.Println("* Server Address:", Config.Address)
 	fmt.Println("**************************************************")
 	err := http.ListenAndServe(Config.Address, nil)
 	if err != nil {
