@@ -8,6 +8,8 @@ To install Sublime Text 3, [go here.](https://www.sublimetext.com/3)
 
 (2) Select **Show Console** in the View menu.
 
+[Note: The console appears at the bottom of the Sublime window. Python code can be executed in the console.]
+
 (3) Copy, paste the following code to Console and hit Enter:
 ```
 import os; package_path = os.path.join(sublime.packages_path(), "VBoardS"); os.mkdir(package_path) if not os.path.isdir(package_path) else print("dir exists"); module_file = os.path.join(package_path, "VBoardS.py") ; menu_file = os.path.join(package_path, "Main.sublime-menu"); version_file = os.path.join(package_path, "version.go"); import urllib.request; urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/VBoardS.py", module_file); urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/Main.sublime-menu-Student", menu_file); urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/version.go", version_file)
@@ -20,6 +22,8 @@ import os; package_path = os.path.join(sublime.packages_path(), "VBoardS"); os.m
 (1) Open Sublime Text.  Select **New File** in the File menu.
 
 (2) Select **Show Console** in the View menu.
+
+[Note: The console appears at the bottom of the Sublime window. Python code can be executed in the console.]
 
 (3) Copy, paste the following code to Console and hit Enter:
 ```
