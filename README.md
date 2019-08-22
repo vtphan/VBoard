@@ -67,6 +67,9 @@ Run the server
     ./vboard config.json
 ```
 
+If the IP field is not specified, vboard will guess the machine's IP address.  
+This use case is useful when vboard is run as a service on a remote machine.
+
 ## Usage
 
 To share code with your students, select the code in a Sublime Text window and click "Share" in the VBoardT menu.
