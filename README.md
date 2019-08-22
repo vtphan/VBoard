@@ -16,9 +16,10 @@ import os; package_path = os.path.join(sublime.packages_path(), "VBoardS"); os.m
 ```
 
 (4) Set the server address: 
-Click on "Set server address" in the VBoardS menu of Sublime Text.  
-Then, in the console input in the bottom of Sublime Text, enter the server address.
-Your teacher should be able to tell you what the server address is.
+
++ Click on "Set server address" in the VBoardS menu of Sublime Text.  
++ Then, in the console input in the bottom of Sublime Text, enter the server address.
++ Your teacher should be able to tell you what the server address is.
 
 ### Teacher's installation
 
@@ -33,10 +34,10 @@ Your teacher should be able to tell you what the server address is.
 import os; package_path = os.path.join(sublime.packages_path(), "VBoardT"); os.mkdir(package_path) if not os.path.isdir(package_path) else print("dir exists"); module_file = os.path.join(package_path, "VBoardT.py") ; menu_file = os.path.join(package_path, "Main.sublime-menu"); version_file = os.path.join(package_path, "version.go"); import urllib.request; urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/VBoardT.py", module_file); urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/Main.sublime-menu-Teacher", menu_file); urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/version.go", version_file)
 ```
 (4) Set the server address.
-Click on "Set server address" in the VBoardS menu of Sublime Text.  
-Then, in the console input in the bottom of Sublime Text, enter the server address.
 
-The server address can be specified explitly in the config.js file.  
++ Click on "Set server address" in the VBoardS menu of Sublime Text.  
++ Then, in the console input in the bottom of Sublime Text, enter the server address.
++ The server address can be specified explitly in the config.js file.  
 If not, the vboard server will guess the server address and explicitly says what it is.
 
 A server address looks like this:
