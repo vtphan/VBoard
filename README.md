@@ -2,7 +2,11 @@ To use this software to share code in class, you will need to (1) install [Subli
 
 To install Sublime Text 3, [go here.](https://www.sublimetext.com/3)
 
-### Student's installation
+****
+
+# For Students
+
+## Installation
 
 (1) Open Sublime Text.  Select **New File** in the File menu.
 
@@ -21,7 +25,7 @@ import os; package_path = os.path.join(sublime.packages_path(), "VBoardS"); os.m
 + Then, in the console input in the bottom of Sublime Text, enter the server address.
 + Your teacher should be able to tell you what the server address is.
 
-### Usage
+## Usage
 
 To share code with your teacher, select the code in a Sublime Text window and click "Share" in the VBoardS menu.
 
@@ -30,7 +34,9 @@ To receive code that was shared by the teacher, click "Receive" in the VBoardS m
 
 ****
 
-### Teacher's installation
+# For teachers
+
+## Installation
 
 (1) Open Sublime Text.  Select **New File** in the File menu.
 
@@ -61,7 +67,7 @@ Run the server
     ./vboard config.json
 ```
 
-### Usage
+## Usage
 
 To share code with your students, select the code in a Sublime Text window and click "Share" in the VBoardT menu.
 
