@@ -182,11 +182,15 @@ func main() {
 	http.HandleFunc("/teacher_receives", teacher_receivesHandler)
 	http.HandleFunc("/student_shares", student_sharesHandler)
 	http.HandleFunc("/student_receives", student_receivesHandler)
+	config_file := "./config.json"
 	if len(os.Args) != 2 {
 		fmt.Println(Usage)
-		os.Exit(1)
+		fmt.Println("config file is not given, will use ./config.json")
+		// os.Exit(1)
+	} else {
+		config_file = os.Args[1]
 	}
-	init_config(os.Args[1])
+	init_config(config_file)
 	fmt.Println("**************************************************")
 	fmt.Printf("* VBoard (%s)\n", VERSION)
 	fmt.Println("* Server Address:", Config.Address)
