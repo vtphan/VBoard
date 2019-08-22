@@ -67,7 +67,10 @@ Run the server
     ./vboard config.json
 ```
 
-If the IP field is not specified, vboard will guess the machine's IP address. This use case is useful when vboard is run as a service on a remote machine.
+Notes:
+
++ If the IP field is not specified, vboard will guess the machine's IP address. 
++ If a config file is not given as a command line input, vboard will guess the machine's IP address and use port 8282 to serve the application.This use case is useful when vboard is run as a service on a remote machine.
 
 ## Usage
 

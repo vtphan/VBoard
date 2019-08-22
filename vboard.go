@@ -38,6 +38,7 @@ var TeacherMessageMutex sync.Mutex
 var StudentMessagesMutex sync.Mutex
 var Config *Configuration
 var SubmissionCounter = 0
+var DefaultPort = 8282
 var Usage = `
 Usage:
 	go_program  config.json
@@ -155,15 +156,19 @@ func informIPAddress() string {
 
 //-----------------------------------------------------------------
 func init_config(filename string) {
-	file, err := os.Open(filename)
-	if err != nil {
-		log.Fatal(err)
-	}
-	decoder := json.NewDecoder(file)
-	Config = &Configuration{}
-	err = decoder.Decode(&Config)
-	if err != nil {
-		log.Fatal(err)
+	if filename != "" {
+		file, err := os.Open(filename)
+		if err != nil {
+			log.Fatal(err)
+		}
+		decoder := json.NewDecoder(file)
+		Config = &Configuration{}
+		err = decoder.Decode(&Config)
+		if err != nil {
+			log.Fatal(err)
+		}
+	} else {
+		Config = &Configuration{Port: DefaultPort}
 	}
 	if Config.IP == "" {
 		Config.IP = informIPAddress()
@@ -182,11 +187,10 @@ func main() {
 	http.HandleFunc("/teacher_receives", teacher_receivesHandler)
 	http.HandleFunc("/student_shares", student_sharesHandler)
 	http.HandleFunc("/student_receives", student_receivesHandler)
-	config_file := "./config.json"
+	config_file := ""
 	if len(os.Args) != 2 {
 		fmt.Println(Usage)
-		fmt.Println("config file is not given, will use ./config.json")
-		// os.Exit(1)
+		fmt.Println("A config file is not given, IP address will be guessed and Port is set to", DefaultPort)
 	} else {
 		config_file = os.Args[1]
 	}
