@@ -17,6 +17,11 @@ import os; package_path = os.path.join(sublime.packages_path(), "VBoardS"); os.m
 
 (4) Set the server address
 
+Example: 
+```
+127.0.0.1:8282
+```
+
 ### Teacher's installation
 
 (1) Open Sublime Text.  Select **New File** in the File menu.
@@ -30,6 +35,10 @@ import os; package_path = os.path.join(sublime.packages_path(), "VBoardS"); os.m
 import os; package_path = os.path.join(sublime.packages_path(), "VBoardT"); os.mkdir(package_path) if not os.path.isdir(package_path) else print("dir exists"); module_file = os.path.join(package_path, "VBoardT.py") ; menu_file = os.path.join(package_path, "Main.sublime-menu"); version_file = os.path.join(package_path, "version.go"); import urllib.request; urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/VBoardT.py", module_file); urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/Main.sublime-menu-Teacher", menu_file); urllib.request.urlretrieve("https://raw.githubusercontent.com/vtphan/VBoard/master/version.go", version_file)
 ```
 (4) Set the server address
+Example: 
+```
+127.0.0.1:8282
+```
 
 (5) Download the latest server ([Windows](http://umdrive.memphis.edu/vphan/public/VBoard/vboard.exe), [MacOS](http://umdrive.memphis.edu/vphan/public/VBoard/vboard)) and make them *executable* on teacher's computer.  This command-line server needs to be run on the teacher's computer every time VBoard is used in class.
 
