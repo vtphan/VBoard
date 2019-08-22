@@ -21,6 +21,15 @@ import os; package_path = os.path.join(sublime.packages_path(), "VBoardS"); os.m
 + Then, in the console input in the bottom of Sublime Text, enter the server address.
 + Your teacher should be able to tell you what the server address is.
 
+### Usage
+
+To share code with your teacher, select the code in a Sublime Text window and click "Share" in the VBoardS menu.
+
+To receive code that was shared by the teacher, click "Receive" in the VBoardS menu.
+
+
+****
+
 ### Teacher's installation
 
 (1) Open Sublime Text.  Select **New File** in the File menu.
@@ -51,4 +60,10 @@ Run the server
 ```
     ./vboard config.json
 ```
+
+### Usage
+
+To share code with your students, select the code in a Sublime Text window and click "Share" in the VBoardT menu.
+
+To receive code that was shared by students one by one, click "Receive" in the VBoardT menu.
 
